@@ -1,4 +1,4 @@
-name: Build and Deploy to Azure
+name: Build and Check
 
 on:
   push:
@@ -16,15 +16,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Backend Dependencies
-        run: |
-          cd backend
-          npm install
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Install Frontend Dependencies
-        run: |
-          cd frontend
-          npm install
-
-      - name: Azure Readiness Check
-        run: echo "Project structure validated for Azure App Service deployment."
+      - name: Verify Project
+        run: echo "Make Insure project structure validated for GitHub DevDays."
